@@ -4,24 +4,21 @@ import globals from "globals";
 export default [
   {
     ...js.configs.recommended,
-    files: ["src/**/*.js"],
+
     languageOptions: {
       ecmaVersion: "latest",
+      sourceType: "commonjs", // important for require/module
+
       globals: {
-        ...globals.node,
-      },
+        ...globals.node,   // Node.js (module, require, etc.)
+        ...globals.jest    // Jest (describe, test, expect)
+      }
     },
+
     rules: {
-      "no-unused-vars": "warn",
-      "no-console": "off",
-    },
-  },
-  {
-    files: ["src/**/*.test.js", "src/**/*.spec.js"],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
-    },
-  },
+      // You can tweak rules here if needed
+      // Example:
+      // "no-unused-vars": "warn"
+    }
+  }
 ];
