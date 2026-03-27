@@ -1,0 +1,19 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app with CI/CD pipeline",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "./node_modules/.bin/jest --coverage --experimental-vm-modules",
+    "lint": "eslint src/",
+    "build": "echo 'Build complete!'"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "jest": "^29.7.0"
+  }
+}
